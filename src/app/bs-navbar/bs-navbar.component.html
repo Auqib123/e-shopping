@@ -9,11 +9,10 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/shopping-cart">Shopping Cart</a>
       </li>
-      <li *ngIf="!user" class="nav-item">
-        <a class="nav-link" routerLink="/login">Login</a>
-      </li>
      
-      <li ngbDropdown *ngIf="user" class="nav-item dropdown">
+     
+     
+      <li ngbDropdown *ngIf="user$ | async as user; else anonymousUser" class="nav-item dropdown">
         <a  ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {{user.displayName}}</a>
         <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
@@ -23,6 +22,12 @@
           <a class="dropdown-item" (click)="logOut()">LogOut</a>
         </div>
       </li>
+      
+      <ng-template #anonymousUser>
+        <li *ngIf="!(user$ | async)" class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+      </ng-template>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
