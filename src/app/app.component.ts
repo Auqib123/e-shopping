@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from './services/auth.service';
 import { Router } from '@angular/router';
+import { UserService } from './services/user.service';
 declare var Excel;
 @Component({
   selector: 'app-root',
@@ -8,9 +9,11 @@ declare var Excel;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private auth:AuthService,router:Router){
+  constructor(private userService:UserService,
+              private auth:AuthService,router:Router){
     auth.user$.subscribe(user=>{
       if(user){
+       this.userService.save(user);
         let returnUrl=localStorage.getItem("returnUrl");
         router.navigateByUrl(returnUrl);
       }
