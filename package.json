@@ -23,9 +23,10 @@
     "@angular/router": "^5.2.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0",
     "angularfire2": "^4.0.0-rc.1",
-    "bootstrap": "^4.0.0",
+    "bootstrap": "4.0.0",
     "core-js": "^2.4.1",
     "firebase": "^4.2.0",
+    "ng2-validation": "^4.2.0",
     "rxjs": "^5.5.6",
     "ssl-root-cas": "^1.2.5",
     "zone.js": "^0.8.19"
