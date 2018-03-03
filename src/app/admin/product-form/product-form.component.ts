@@ -3,6 +3,7 @@ import {Router, ActivatedRoute} from '@angular/router'
 import { CategoryService } from '../../services/category.service';
 import { ProductService } from '../../services/product.service';
 import 'rxjs/add/operator/take'; 
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-product-form',
@@ -16,7 +17,7 @@ export class ProductFormComponent implements OnInit {
   title;
   price;
   category;
-  product={};
+  product:Product;
   constructor(private router:Router,
 
               private activatedRoute:ActivatedRoute,
