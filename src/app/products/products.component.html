@@ -1,3 +1,36 @@
-<p>
-  products works!
-</p>
+<div class="row">
+  <div class="col-3">
+    
+  <ul class="list-group">
+    <li *ngFor="let c of categories$ | async"class="list-group-item" (click)="showFilter(c.name)">{{c.name}} </li>
+  </ul>
+
+
+  </div>
+
+  <div class="col">
+
+    <div class="row">
+        <ng-container   *ngFor="let product of filteredProducts; let i = index">
+            <div class="col">
+                <div class="card" style="width: 10rem;">
+                    <img class="card-img-top" [src]="product.imageUrl" *ngIf="product.imageUrl"alt="">
+                    <div class="card-body">
+                      <h5 class="card-title"> {{product.title}}</h5>
+                      <p class="card-text">{{product.price | currency:'USD':'true'}}</p>
+                      <a href="#" class="btn btn-primary">Add To Cart</a>
+                    </div>
+                
+                </div>  
+            </div>
+            <div class="w-100" *ngIf="(i+1)%3===0"></div>
+        </ng-container>
+      
+      </div>
+  </div>
+      
+</div>
+
+
+
+

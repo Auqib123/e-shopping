@@ -4,12 +4,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {HttpModule} from'@angular/http';
 import { AppComponent } from './app.component';
-import { TitleCasePipePipe } from './title-case-pipe.pipe';
+
 import{AngularFireModule} from 'angularfire2';
 import{AngularFireDatabaseModule} from 'angularfire2/database';
 import{AngularFireAuthModule} from 'angularfire2/auth';
 import { environment } from '../environments/environment';
-
 
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -36,7 +35,6 @@ import { ProductService } from './services/product.service';
 @NgModule({
   declarations: [
     AppComponent,
-    TitleCasePipePipe,
     BsNavbarComponent,
     HomeComponent,
     ProductsComponent,
@@ -82,7 +80,7 @@ import { ProductService } from './services/product.service';
     UserService,
     CategoryService,
     AdminAuthGuard,
-    ProductService
+    ProductService,
   ],
   bootstrap: [AppComponent]
 })
