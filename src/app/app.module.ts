@@ -33,6 +33,7 @@ import { CategoryService } from './services/category.service';
 import { ProductService } from './services/product.service';
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { ShoppingCartService } from './services/shopping-cart.service';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
     AngularFireAuthModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
-      {path :'',component:ProductsComponent},
+      {path :'',component: ProductsComponent},
       {path :'products',component:ProductsComponent},
       {path :'login',component:LoginComponent},
       {path :'shopping-cart',component:ShoppingCartComponent},
@@ -85,6 +86,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
     CategoryService,
     AdminAuthGuard,
     ProductService,
+    ShoppingCartService
   ],
   bootstrap: [AppComponent]
 })
