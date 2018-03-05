@@ -9,3 +9,9 @@ body {
   .dropdown-item{
     cursor: pointer;
   }
+
+
+  .card{
+    height:90%;
+    width: 90%;
+  }
