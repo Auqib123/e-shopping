@@ -5,6 +5,7 @@ import { AuthService } from '../services/auth.service';
 import { Order } from '../models/order';
 import { OrderService } from '../services/order.service';
 import { ShoppingCart } from '../models/shopping-cart';
+import { ShippingAddress } from '../models/shipping-address';
 
 @Component({
   selector: 'shipping-form',
@@ -14,7 +15,7 @@ import { ShoppingCart } from '../models/shopping-cart';
 export class ShippingFormComponent implements OnInit,OnDestroy {
   @Input("cart") cart:ShoppingCart;
   shopping={}
-  shipping={}
+  shipping:any={};
   userId:string;
   userSubscription:Subscription;
 
@@ -33,6 +34,8 @@ export class ShippingFormComponent implements OnInit,OnDestroy {
   }
   ngOnDestroy(){
     this.userSubscription.unsubscribe();
+    console.log(this.shipping);
+    
  
   }
 
