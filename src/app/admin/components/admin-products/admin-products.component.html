@@ -1,0 +1,79 @@
+
+<p>
+<a routerLink="/admin/products/new" class="btn btn-primary">New Product</a>
+</p>
+<p>
+    <input class="form-control" type="text" #txt (keyup)="filter(txt.value)" placeholder="search..." />
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of filteredProducts">
+            <td>{{product.title}}</td>
+            <td>{{product.price|currency:'USD':'true'}}</td>
+            <td><img [src]="product.imageUrl" height="25px"></td>
+            <td>
+                <a [routerLink]="['/admin/products/',product.$key]">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table> 
+
+
+
+<!-- <data-table
+[items]="items"
+[itemCount]="itemCount"
+(reload)="reloadItems($event)"
+>
+<data-table-column
+[property]="'title'"
+[header]="'Title'"
+[Sortable]="true"
+[resizable]="true"
+
+>
+
+</data-table-column>
+
+
+<data-table-column
+[property]="'price'"
+[header]="'Price'"
+[Sortable]="true"
+[resizable]="true"
+
+>
+        <ng-template #dataTableCell let-item="product">
+                {{product.price|currency:"USD":"true"}}
+        </ng-template>
+
+</data-table-column>
+
+
+
+
+<data-table-column
+[property]="'$key'"
+>
+    
+        <ng-template #dataTableCell let-item="product">
+                <a [routerLink]="['/admin/products/',product.$key]">Edit</a>
+        </ng-template>
+
+</data-table-column>
+
+
+</data-table>
+
+
+
+
+ -->
